@@ -2,32 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-200%);
+    opacity: 0;
   }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseAfter {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+/* Slide first, then pulse (left) */
+.animate-slideLeft {
+  animation: slideInFromLeft 2.5s ease-out forwards,
+             pulseAfter 3s ease-in-out infinite;
+  animation-delay: 0s, 2.5s;
+}
+
+/* Slide first, then pulse (right) */
+.animate-slideRight {
+  animation: slideInFromRight 2.5s ease-out forwards,
+             pulseAfter 3s ease-in-out infinite;
+  animation-delay: 0s, 2.5s;
 }
