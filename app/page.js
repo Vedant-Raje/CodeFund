@@ -26,12 +26,12 @@ export default function Home() {
     </div>
 
 <div className="relative w-full z-10">
-  {/* Left phrase */}
+
   <div className="absolute top-1/2 -translate-y-1/2 left-4 text-white text-lg font-semibold font-mono hidden md:block animate-slideLeft">
     The internet depends on
   </div>
 
-  {/* Right phrase */}
+
   <div className="absolute top-1/2 -translate-y-1/2 right-4 text-white text-lg font-semibold font-mono hidden md:block animate-slideRight">
     open source, everywhere.
   </div>

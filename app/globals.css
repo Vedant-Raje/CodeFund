@@ -11,6 +11,10 @@ body {
     transform: translateX(-200%);
     opacity: 0;
   }
+  50% {
+    transform: translateX(173%);
+    opacity: 1;
+  }
   100% {
     transform: translateX(0%);
     opacity: 1;
@@ -21,6 +25,10 @@ body {
   0% {
     transform: translateX(200%);
     opacity: 0;
+  }
+  50% {
+    transform: translateX(-173%);
+    opacity: 1;
   }
   100% {
     transform: translateX(0%);
@@ -34,21 +42,21 @@ body {
     opacity: 1;
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.1);
     opacity: 0.85;
   }
 }
 
-/* Slide first, then pulse (left) */
+
 .animate-slideLeft {
-  animation: slideInFromLeft 2.5s ease-out forwards,
+  animation: slideInFromLeft 12s ease-out forwards,
              pulseAfter 3s ease-in-out infinite;
-  animation-delay: 0s, 2.5s;
+  animation-delay: 0s, 12s;
 }
 
-/* Slide first, then pulse (right) */
+
 .animate-slideRight {
-  animation: slideInFromRight 2.5s ease-out forwards,
+  animation: slideInFromRight 12s ease-out forwards,
              pulseAfter 3s ease-in-out infinite;
-  animation-delay: 0s, 2.5s;
+  animation-delay: 0s, 12s;
 }
