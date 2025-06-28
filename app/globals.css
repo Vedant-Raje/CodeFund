@@ -11,10 +11,7 @@ body {
     transform: translateX(-200%);
     opacity: 0;
   }
-  50% {
-    transform: translateX(173%);
-    opacity: 1;
-  }
+ 
   100% {
     transform: translateX(0%);
     opacity: 1;
@@ -26,10 +23,7 @@ body {
     transform: translateX(200%);
     opacity: 0;
   }
-  50% {
-    transform: translateX(-173%);
-    opacity: 1;
-  }
+  
   100% {
     transform: translateX(0%);
     opacity: 1;
@@ -49,15 +43,34 @@ body {
 
 
 .animate-slideLeft {
-  animation: slideInFromLeft 12s ease-out forwards,
+  animation: slideInFromLeft 3s ease-out forwards,
              pulseAfter 3s ease-in-out infinite;
-  animation-delay: 0s, 12s;
+  animation-delay: 0s, 3s;
 }
 
 
 .animate-slideRight {
-  animation: slideInFromRight 12s ease-out forwards,
+  animation: slideInFromRight 3s ease-out forwards,
              pulseAfter 3s ease-in-out infinite;
-  animation-delay: 0s, 12s;
+  animation-delay: 0s, 3s;
+}
+
+
+.bg-animated {
+  background: linear-gradient(-45deg, #080808, #251f3e, #16163b, #010119);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 

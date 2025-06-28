@@ -1,6 +1,6 @@
-"use client"
-import React, { useState } from 'react'
-import { useSession, signIn, signOut } from "next-auth/react"
+"use client";
+import React, { useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 
 const Navbar = () => {
@@ -8,8 +8,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#0c0729] text-white p-4 flex flex-col md:flex-row items-center justify-between">
-      <Link href={"/"} className="text-lg font-bold ">CodeFund</Link>
+    <nav className="bg-[#110c2d] text-white p-4 flex flex-col md:flex-row items-center justify-between">
+      <Link href={"/"} className="text-lg font-bold ">
+        CodeFund
+      </Link>
 
       <div>
         {session ? (
@@ -22,24 +24,53 @@ const Navbar = () => {
             >
               <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#0c0729] dark:bg-[#0c0729] rounded-md group-hover:bg-transparent">
                 {session.user.name}
-                <svg className="w-2.5 h-2.5 ml-3 inline" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4"/>
+                <svg
+                  className="w-2.5 h-2.5 ml-3 inline"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="m1 1 4 4 4-4"
+                  />
                 </svg>
               </span>
             </button>
-            <div className={`absolute top-full mt-2 w-40 ${isOpen ? 'block' : 'hidden'} right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700`}>
+            <div
+              className={`absolute top-full mt-2 w-40 ${
+                isOpen ? "block" : "hidden"
+              } right-0 z-10 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700`}
+            >
               <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
                 <li>
-                  <Link href="/dashboard" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
+                  <Link
+                    href="/dashboard"
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Dashboard
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
+                  <Link
+                    href={`/${session.user.name}`}
+                    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Your Page
+                  </Link>
                 </li>
+
                 <li>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</Link>
-                </li>
-                <li>
-                  <button onClick={() => signOut()} className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</button>
+                  <button
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                    className="w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >
+                    Sign out
+                  </button>
                 </li>
               </ul>
             </div>
