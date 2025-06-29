@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 CodeFund — Empowering developers
 
-## Getting Started
+CodeFund is a full-stack crowdfunding platform inspired by *Patreon*, designed to help developers receive financial support from their followers. Built using modern technologies like Next.js 14, MongoDB, and Razorpay, CodeFund offers a robust, secure, and production-ready end-to-end donation system for independent developers.
 
-First, run the development server:
 
+---
+
+## 🌟 Features
+
+- 🔐 **GitHub OAuth Authentication** – Quick and secure login for users and creators using NextAuth.js  
+- 👤 **Dynamic Creator Profiles** – Each creator gets a custom page (e.g. `/username`) to receive donations and showcase their work  
+- 💸 **Razorpay Payment Integration** – Followers can donate custom or preset amounts securely via Razorpay  
+- 📊 **Creator Dashboard** – Intuitive UI to manage profiles, update cover/photo, and link Razorpay API keys  
+- 🏆 **Supporter Leaderboard** – Public display of top donors, amounts, and custom messages  
+- 📈 **Payment Analytics** – Track total raised funds, number of donations, and donation trends (coming soon)  
+- ✅ **Real-Time Updates** – Donations dynamically update without page reloads  
+- 📱 **Responsive UI** – Mobile-first design powered by Tailwind CSS  
+- 🔒 **Secure Backend** – Payment signature verification, .env handling, and secure API design  
+
+
+
+---
+
+## 🧠 Tech Stack
+
+| Layer          | Tech Used                                   |
+|----------------|----------------------------------------------|
+| Frontend       | React, Next.js 14, Tailwind CSS              |
+| Authentication | NextAuth.js (GitHub OAuth)                   |
+| Backend/API    | Next.js API Routes, Node.js                  |
+| Database       | MongoDB with Mongoose                        |
+| Payments       | Razorpay API (orders, payments, webhooks)    |
+| Tools          | Git, Postman, FileZilla, Certbot             |
+
+---
+
+## 📦 Setup Instructions
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+git clone https://github.com/your-username/codefund.git
+cd codefund
