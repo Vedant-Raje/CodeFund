@@ -74,3 +74,29 @@ body {
   }
 }
 
+@keyframes typewriter {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #94a3b8; /* slate-300 */
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typewriter 3.5s steps(40, end) 1 forwards, blinkCursor 0.75s step-end infinite;
+}
+
